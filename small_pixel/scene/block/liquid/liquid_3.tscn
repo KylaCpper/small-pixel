@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://scene/block/liquid/liquid_3.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/liquid/water.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[node name="liquid" type="StaticBody2D"]
+
+transform/pos = Vector2( 357.772, 398.528 )
+z/z = 1
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 3
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script/script = ExtResource( 1 )
+
+[node name="sprite" type="Polygon2D" parent="."]
+
+transform/pos = Vector2( -0.0944824, 0 )
+polygon = Vector2Array( 16, 8, 16, 16, -16, 16, -16, 15 )
+uv = Vector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = ExtResource( 2 )
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="ani" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="collision" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+[node name="time" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="area" type="Area2D" parent="."]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 0.25, 0, 12 )
+shapes/0/trigger = true
+space_override = 1
+gravity_vec = Vector2( 1, 0 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 5
+collision/mask = 7
+
+[node name="collision" type="CollisionShape2D" parent="area"]
+
+transform/pos = Vector2( 0, 12 )
+transform/scale = Vector2( 1, 0.25 )
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+

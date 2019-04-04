@@ -1,0 +1,13 @@
+[gd_scene format=1]
+
+[node name="ray_bg" type="RayCast2D"]
+
+enabled = true
+cast_to = Vector2( 0, 0 )
+layer_mask = 512
+type_mask = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+

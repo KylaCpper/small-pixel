@@ -1,0 +1,62 @@
+[gd_resource type="SampleLibrary" load_steps=9 format=1]
+
+[ext_resource path="res://assets/sound/place/dirt.wav" type="Sample" id=1]
+[ext_resource path="res://assets/sound/place/grass.wav" type="Sample" id=2]
+[ext_resource path="res://assets/sound/place/gravel.wav" type="Sample" id=3]
+[ext_resource path="res://assets/sound/place/leaf.wav" type="Sample" id=4]
+[ext_resource path="res://assets/sound/place/sand.wav" type="Sample" id=5]
+[ext_resource path="res://assets/sound/place/snow.wav" type="Sample" id=6]
+[ext_resource path="res://assets/sound/place/stone.wav" type="Sample" id=7]
+[ext_resource path="res://assets/sound/place/wood.wav" type="Sample" id=8]
+
+[resource]
+
+samples/dirt = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 1 )
+}
+samples/grass = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
+samples/gravel = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/leaf = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+samples/sand = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+samples/snow = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 6 )
+}
+samples/stone = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 7 )
+}
+samples/wood = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 8 )
+}
+

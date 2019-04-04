@@ -1,0 +1,1159 @@
+[gd_scene load_steps=13 format=1]
+
+[ext_resource path="res://assets/img/sky/sky.jpg" type="Texture" id=1]
+[ext_resource path="res://scene/start/home.gd" type="Script" id=2]
+[ext_resource path="res://assets/tres/ui/button_hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/tres/ui/button_press.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/tres/ui/button_default.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/font/dynamicfont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/tres/ui/window_bg.tres" type="StyleBox" id=7]
+[ext_resource path="res://scene/start/load.gd" type="Script" id=8]
+[ext_resource path="res://scene/start/set.gd" type="Script" id=9]
+[ext_resource path="res://scene/start/multiplayer.gd" type="Script" id=10]
+[ext_resource path="res://scene/start/help.gd" type="Script" id=11]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "sky"
+length = 30.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 15, 30 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 510, 160 ), Vector2( 450, 380 ), Vector2( 510, 160 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+z/relative = false
+
+[node name="bg" type="Panel" parent="."]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 540.0
+
+[node name="Sprite" type="Sprite" parent="bg"]
+
+transform/pos = Vector2( 450.397, 378.543 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bg"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/sky = SubResource( 1 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "sky"
+
+[node name="home" type="Control" parent="."]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 540.0
+script/script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+group = "home"
+
+[node name="start" type="Button" parent="home"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 850.0
+margin/top = 190.0
+margin/right = 230.0
+margin/bottom = 230.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "start"
+flat = false
+clip_text = true
+
+[node name="load" type="Button" parent="home"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 850.0
+margin/top = 240.0
+margin/right = 230.0
+margin/bottom = 280.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "load"
+flat = false
+clip_text = true
+
+[node name="multiplayer" type="Button" parent="home"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 850.0
+margin/top = 290.0
+margin/right = 230.0
+margin/bottom = 330.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "multiplayer"
+flat = false
+clip_text = true
+
+[node name="set" type="Button" parent="home"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 850.0
+margin/top = 340.0
+margin/right = 230.0
+margin/bottom = 380.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "set"
+flat = false
+clip_text = true
+
+[node name="help" type="Button" parent="home"]
+
+visibility/visible = false
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 850.0
+margin/top = 340.0
+margin/right = 230.0
+margin/bottom = 380.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "info"
+flat = false
+clip_text = true
+
+[node name="exit" type="Button" parent="home"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 849.0
+margin/top = 390.0
+margin/right = 231.0
+margin/bottom = 430.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "exit"
+flat = false
+clip_text = true
+
+[node name="set seed" type="Panel" parent="home"]
+
+visibility/visible = false
+visibility/opacity = 0.7
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 210.0
+margin/top = 110.0
+margin/right = 770.0
+margin/bottom = 390.0
+custom_styles/panel = ExtResource( 7 )
+
+[node name="laber" type="Label" parent="home/set seed"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 560.0
+margin/bottom = 90.0
+custom_fonts/font = ExtResource( 6 )
+text = "set seed"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="edit" type="LineEdit" parent="home/set seed"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 140.0
+margin/top = 150.0
+margin/right = 420.0
+margin/bottom = 190.0
+custom_fonts/font = ExtResource( 6 )
+placeholder/alpha = 0.6
+focus_mode = 2
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
+
+[node name="sure" type="Button" parent="home/set seed"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 160.0
+margin/top = 220.0
+margin/right = 230.0
+margin/bottom = 250.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "sure"
+flat = false
+
+[node name="close" type="Button" parent="home/set seed"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 320.0
+margin/top = 220.0
+margin/right = 390.0
+margin/bottom = 250.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "close"
+flat = false
+
+[node name="sure exit" type="Panel" parent="home"]
+
+editor/display_folded = true
+visibility/visible = false
+visibility/opacity = 0.7
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 210.0
+margin/top = 120.0
+margin/right = 770.0
+margin/bottom = 390.0
+custom_styles/panel = ExtResource( 7 )
+
+[node name="laber" type="Label" parent="home/sure exit"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 50.0
+margin/right = 560.0
+margin/bottom = 140.0
+custom_fonts/font = ExtResource( 6 )
+text = "sure exit"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="sure" type="Button" parent="home/sure exit"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 160.0
+margin/top = 220.0
+margin/right = 230.0
+margin/bottom = 250.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "sure"
+flat = false
+
+[node name="close" type="Button" parent="home/sure exit"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 320.0
+margin/top = 220.0
+margin/right = 390.0
+margin/bottom = 250.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "close"
+flat = false
+
+[node name="load" type="Control" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 540.0
+script/script = ExtResource( 8 )
+line = 4
+width = 100
+height = 100
+
+[node name="bg" type="Panel" parent="load"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 540.0
+
+[node name="sure" type="Button" parent="load"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 720.0
+margin/top = 460.0
+margin/right = 360.0
+margin/bottom = 492.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "sure"
+flat = false
+clip_text = true
+
+[node name="close" type="Button" parent="load"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 380.0
+margin/top = 460.0
+margin/right = 700.0
+margin/bottom = 492.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "close"
+flat = false
+clip_text = true
+
+[node name="delete" type="Button" parent="load"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 190.0
+margin/top = 460.0
+margin/right = 890.0
+margin/bottom = 492.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "delete"
+flat = false
+clip_text = true
+
+[node name="list" type="ItemList" parent="load"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 430.0
+custom_fonts/font = ExtResource( 6 )
+
+[node name="delete_window" type="Panel" parent="load"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 540.0
+
+[node name="delete_window" type="Label" parent="load/delete_window"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -10.0
+margin/top = 10.0
+margin/right = 960.0
+margin/bottom = 320.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/shadow_offset_x = 0
+text = "sure delete?"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="sure" type="Button" parent="load/delete_window"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 720.0
+margin/top = 460.0
+margin/right = 360.0
+margin/bottom = 492.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "sure"
+flat = false
+clip_text = true
+
+[node name="close" type="Button" parent="load/delete_window"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 380.0
+margin/top = 460.0
+margin/right = 700.0
+margin/bottom = 492.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "close"
+flat = false
+clip_text = true
+
+[node name="set" type="Control" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 540.0
+script/script = ExtResource( 9 )
+
+[node name="bg" type="Panel" parent="set"]
+
+visibility/opacity = 0.6
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 540.0
+custom_styles/panel = ExtResource( 7 )
+
+[node name="title" type="Label" parent="set"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 290.0
+margin/top = 0.0
+margin/right = 660.0
+margin/bottom = 60.0
+custom_fonts/font = ExtResource( 6 )
+text = "set"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="sure" type="Button" parent="set"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 720.0
+margin/top = 460.0
+margin/right = 360.0
+margin/bottom = 492.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "sure"
+flat = false
+clip_text = true
+
+[node name="close" type="Button" parent="set"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 380.0
+margin/top = 460.0
+margin/right = 700.0
+margin/bottom = 492.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "close"
+flat = false
+clip_text = true
+
+[node name="music text" type="Label" parent="set"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 250.0
+margin/top = 70.0
+margin/right = 370.0
+margin/bottom = 130.0
+custom_fonts/font = ExtResource( 6 )
+text = "music"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="effect text" type="Label" parent="set"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 250.0
+margin/top = 130.0
+margin/right = 370.0
+margin/bottom = 190.0
+custom_fonts/font = ExtResource( 6 )
+text = "music effect"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="gui" type="Label" parent="set"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 250.0
+margin/top = 190.0
+margin/right = 370.0
+margin/bottom = 250.0
+custom_fonts/font = ExtResource( 6 )
+text = "gui_op"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="gui1" type="Label" parent="set"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 250.0
+margin/top = 250.0
+margin/right = 370.0
+margin/bottom = 310.0
+custom_fonts/font = ExtResource( 6 )
+text = "gui_bar"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="langugae text" type="Label" parent="set"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 250.0
+margin/top = 302.0
+margin/right = 370.0
+margin/bottom = 362.0
+custom_fonts/font = ExtResource( 6 )
+text = "language"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="music bar" type="HScrollBar" parent="set"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 416.0
+margin/top = 95.0
+margin/right = 546.0
+margin/bottom = 107.0
+range/min = 0.0
+range/max = 100.0
+range/step = 0.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+custom_step = -1.0
+
+[node name="text" type="Label" parent="set/music bar"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 144.0
+margin/top = -5.0
+margin/right = 184.0
+margin/bottom = 9.0
+custom_fonts/font = ExtResource( 6 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="effect bar" type="HScrollBar" parent="set"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 416.0
+margin/top = 153.0
+margin/right = 546.0
+margin/bottom = 165.0
+range/min = 0.0
+range/max = 100.0
+range/step = 0.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+custom_step = -1.0
+
+[node name="text" type="Label" parent="set/effect bar"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 144.0
+margin/top = -3.0
+margin/right = 184.0
+margin/bottom = 11.0
+custom_fonts/font = ExtResource( 6 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="gui bar" type="HScrollBar" parent="set"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 416.0
+margin/top = 223.0
+margin/right = 546.0
+margin/bottom = 235.0
+range/min = 0.0
+range/max = 100.0
+range/step = 0.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+custom_step = -1.0
+
+[node name="text" type="Label" parent="set/gui bar"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 144.0
+margin/top = -3.0
+margin/right = 184.0
+margin/bottom = 11.0
+custom_fonts/font = ExtResource( 6 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="gui_bar check" type="CheckBox" parent="set"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 488.0
+margin/top = 271.0
+margin/right = 618.0
+margin/bottom = 298.0
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "enable"
+flat = false
+align = 0
+
+[node name="text" type="Label" parent="set/gui_bar check"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 144.0
+margin/top = -3.0
+margin/right = 184.0
+margin/bottom = 11.0
+custom_fonts/font = ExtResource( 6 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="language list" type="ItemList" parent="set"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 420.0
+margin/top = 326.0
+margin/right = 580.0
+margin/bottom = 426.0
+custom_fonts/font = ExtResource( 6 )
+
+[node name="multiplayer" type="Control" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 540.0
+script/script = ExtResource( 10 )
+
+[node name="bg" type="Panel" parent="multiplayer"]
+
+visibility/opacity = 0.6
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 180.0
+margin/top = 140.0
+margin/right = 790.0
+margin/bottom = 420.0
+custom_styles/panel = ExtResource( 7 )
+
+[node name="title" type="Label" parent="multiplayer"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 290.0
+margin/top = 170.0
+margin/right = 660.0
+margin/bottom = 310.0
+custom_fonts/font = ExtResource( 6 )
+text = "multiplayer_test"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="sure" type="Button" parent="multiplayer"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 540.0
+margin/top = 360.0
+margin/right = 540.0
+margin/bottom = 392.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "sure"
+flat = false
+clip_text = true
+
+[node name="help" type="Control" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 540.0
+script/script = ExtResource( 11 )
+
+[node name="bg" type="Panel" parent="help"]
+
+visibility/blend_mode = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 540.0
+custom_styles/panel = ExtResource( 7 )
+
+[node name="title" type="Label" parent="help"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 290.0
+margin/top = 0.0
+margin/right = 660.0
+margin/bottom = 60.0
+custom_fonts/font = ExtResource( 6 )
+text = "info"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="close" type="Button" parent="help"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 540.0
+margin/top = 460.0
+margin/right = 540.0
+margin/bottom = 492.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "close"
+flat = false
+clip_text = true
+
+[node name="qq" type="Button" parent="help"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 380.0
+margin/top = 310.0
+margin/right = 730.0
+margin/bottom = 340.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "加qq"
+flat = false
+clip_text = true
+
+[node name="qq_qun" type="Button" parent="help"]
+
+anchor/left = 1
+focus_neighbour/right = NodePath("..")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 380.0
+margin/top = 350.0
+margin/right = 730.0
+margin/bottom = 380.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "加qq群"
+flat = false
+clip_text = true
+
+[node name="Label" type="Label" parent="help"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 140.0
+margin/top = 50.0
+margin/right = 840.0
+margin/bottom = 110.0
+custom_fonts/font = ExtResource( 6 )
+text = "这是由一个人制作的一款游戏，
+如果你感兴趣，请关注他，
+我随时会更新，添加新内容"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label5" type="Label" parent="help"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 130.0
+margin/top = 300.0
+margin/right = 280.0
+margin/bottom = 450.0
+custom_fonts/font = ExtResource( 6 )
+text = "作者：kylaCpp
+联系作者：
+qq号 752889576
+qq群 685437827"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="window" type="Control" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 540.0
+
+[node name="bg" type="Panel" parent="window"]
+
+visibility/blend_mode = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 960.0
+margin/bottom = 540.0
+custom_styles/panel = ExtResource( 7 )
+
+[node name="text" type="Label" parent="window"]
+
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 640.0
+margin/bottom = 357.0
+custom_fonts/font = ExtResource( 6 )
+text = "start from steam"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
