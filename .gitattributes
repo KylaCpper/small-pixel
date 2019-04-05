@@ -1,3 +1,4 @@
 *.tres linguist-language=GDScript
 *.tscn linguist-language=GDScript
 *.flag linguist-language=GDScript
+*.png linguist-language=GDScript
