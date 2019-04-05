@@ -1,4 +1,4 @@
-*.tres linguist-language=GDScript
-*.tscn linguist-language=GDScript
-*.anm linguist-language=GDScript
-*.gd linguist-language=GDScript
+*.tres linguist-language=gd
+*.tscn linguist-language=gd
+*.anm linguist-language=gd
+*.gd linguist-language=gd
