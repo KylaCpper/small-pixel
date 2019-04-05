@@ -1,3 +1,6 @@
 *.tscn linguist-language=GDScript
 *.tres linguist-language=GDScript
 *.anm linguist-language=GDScript
+*.gd linguist-language=GDScript
+*.wav linguist-language=GDScript
+*.png linguist-language=GDScript
