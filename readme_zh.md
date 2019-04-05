@@ -7,7 +7,7 @@
 这是一个个人项目，
 他使用godot engine 制作的，
 一个沙盒的2d游戏,
-类似于泰拉瑞亚和mc
+类似于泰拉瑞亚和mc  
 [视频连接](https://www.youtube.com/watch?v=XgNnDllDHMs)  
 ![alt](/img1.png)
 ![alt](/img2.png)
