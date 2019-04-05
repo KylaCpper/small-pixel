@@ -1,7 +1,7 @@
 # small-pixel  
 一个沙盒的2d游戏
-[中文点我][/readme_zh.md]
-[english click][/readme.md]
+[中文点我](/readme_zh.md)  
+[english click](/readme.md)  
 使用版本  godot 2.1.4  
 
 这是一个个人项目，
