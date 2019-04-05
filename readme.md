@@ -1,7 +1,7 @@
 # small-pixel  
 A sandbox game project for learning godot  
-[中文点我](/readme_zh.md)
-[english click](/readme.md)
+[中文点我](/readme_zh.md)  
+[english click](/readme.md)  
 Use version   godot 2.1.4  
 
 This is a personal project,  
