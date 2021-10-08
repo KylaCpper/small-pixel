@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://assets/img/crack/crack1.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/bag/bag_bg1.png" type="Texture" id=2]
+
+[node name="select" type="Node2D"]
+
+visibility/visible = false
+transform/pos = Vector2( 359.186, 390.946 )
+transform/scale = Vector2( 0.5, 0.5 )
+z/z = 6
+
+[node name="crack" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+modulate = Color( 0.777888, 0.78125, 0.350952, 0.644706 )
+region_rect = Rect2( 0, 0, 64, 64 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="select" type="Sprite" parent="."]
+
+visibility/opacity = 0.5
+texture = ExtResource( 2 )
+modulate = Color( 0.777888, 0.78125, 0.350952, 0.644706 )
+region_rect = Rect2( 0, 0, 64, 64 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+

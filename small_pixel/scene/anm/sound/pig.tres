@@ -1,0 +1,27 @@
+[gd_resource type="SampleLibrary" load_steps=4 format=1]
+
+[ext_resource path="res://assets/sound/ani/pig.wav" type="Sample" id=1]
+[ext_resource path="res://assets/sound/ani/pig_hurt.wav" type="Sample" id=2]
+[ext_resource path="res://assets/sound/ani/pig_died.wav" type="Sample" id=3]
+
+[resource]
+
+samples/pig = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 1 )
+}
+samples/pig_died = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
+samples/pig_hurt = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+

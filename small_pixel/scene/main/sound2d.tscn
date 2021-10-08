@@ -1,0 +1,14 @@
+[gd_scene format=1]
+
+[node name="SamplePlayer2D" type="SamplePlayer2D"]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 16.0
+params/attenuation/max_distance = 480.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = null
+config/pitch_random = 0.0
+
+
