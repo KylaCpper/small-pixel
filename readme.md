@@ -10,7 +10,6 @@ This is a personal project,
 He made it using the godot engine,  
 a sandboxed 2d game,  
 Similar to Terraria and mc  
-[Video connection](https://www.youtube.com/watch?v=XgNnDllDHMs)  
 ![alt](/img1.png)
 ![alt](/img2.png)
 ![alt](/img3.png)
